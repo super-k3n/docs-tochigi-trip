@@ -1,0 +1,368 @@
+/* 全体のスタイル */
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --accent-color: #ffbe0b;
+    --dark-color: #2d3436;
+    --light-color: #f9f9f9;
+    --font-main: 'Noto Sans JP', sans-serif;
+    --font-heading: 'Noto Serif JP', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/kawamata_onsen.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ナビゲーション */
+nav {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* セクション共通 */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+}
+
+.section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+/* 旅行の概要 */
+.overview-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.overview-details, .overview-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.overview-details p {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(78, 205, 196, 0.1);
+    border-left: 3px solid var(--secondary-color);
+}
+
+.overview-description p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* 旅程表 */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(249, 249, 249, 0.7);
+}
+
+tr:hover {
+    background-color: rgba(78, 205, 196, 0.1);
+}
+
+/* 観光スポット */
+.spot {
+    margin-bottom: 60px;
+}
+
+.spot-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.spot-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.spot-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spot-details {
+    flex: 2;
+    min-width: 300px;
+}
+
+.spot-details p {
+    margin-bottom: 10px;
+}
+
+.couple-point {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+}
+
+.couple-point h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.couple-point ul {
+    padding-left: 20px;
+}
+
+.couple-point li {
+    margin-bottom: 5px;
+}
+
+/* 交通情報 */
+.transport-info h3 {
+    color: var(--secondary-color);
+    margin-top: 30px;
+}
+
+.transport-info ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.transport-info li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.transport-info li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* 持ち物チェックリスト */
+.checklist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.checklist-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.checklist {
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+
+.checklist li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* 特別アドバイス */
+.tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tip {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 190, 11, 0.1);
+    border-radius: 8px;
+}
+
+.tip h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.tip p {
+    margin-bottom: 10px;
+}
+
+.final-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+}
+
+/* フッター */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section h3 {
+        font-size: 1.3rem;
+    }
+    
+    nav ul li {
+        padding: 10px 0;
+    }
+    
+    nav ul li a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 60px 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}
